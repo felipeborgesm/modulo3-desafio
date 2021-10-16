@@ -1,3 +1,18 @@
+class Book {
+    constructor(title, genre, author, status, read, readDate){
+        this.title = title;
+        this.genre = genre;
+        this.author = author;
+        this.status = status;
+        this.read = read;
+        this.readDate = new Date(readDate)
+    }
+    
+}
+
+
+
+
 class Booklist {
     constructor(){
         this.books = [];
