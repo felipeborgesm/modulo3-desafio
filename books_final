@@ -1,0 +1,79 @@
+class Book {
+    constructor(title, genre, author, status, read, readDate){
+        this.title = title;
+        this.genre = genre;
+        this.author = author;
+        this.status = status;
+        this.read = read; 
+        this.readDate = new Date(readDate)
+    }
+}
+
+class BookFunctions{
+    constructor(books, booksReaded, numbooksReaded,booksNotReaded, numbooksNotReaded,nextBookToRead,currentBookBeingRead, lastBookRead){
+        this.books = [];
+        this.booksReaded = [];
+        this.numbooksReaded = this.booksReaded.length;
+        this.booksNotReaded = [];
+        this.numbooksNotReaded = this.booksNotReaded.length;
+        this.nextBookToRead = {};
+        this.currentBookBeingRead = {};
+        this.lastBookRead = {}
+    }
+
+    addBookReaded(value){this.booksReaded = [...this.booksReaded, value]};
+    changeCurrent(){return this.currentBookBeingRead = this.booksNotReaded[0];}
+    changeNextToRead(){return this.nextBookToRead = this.booksNotReaded[1]; }
+    readedBooks(){return this.numbooksReaded = this.booksReaded.length;}
+    notReadedBooks(){return this.numbooksNotReaded = this.booksNotReaded.length;}
+    lastReaded(){return this.lastBookRead = this.booksReaded[this.booksReaded.length - 1];}
+}
+
+
+class Booklist extends BookFunctions {
+
+    add(book){
+        this.books = [...this.books, book]
+        book.read ? super.addBookReaded(book) : this.booksNotReaded = [...this.booksNotReaded, book];
+
+        super.changeCurrent()
+        super.changeNextToRead()
+        super.readedBooks()
+        super.notReadedBooks()
+        super.lastReaded()
+    }       
+
+    get finishCurrentBook(){
+        let book = this.currentBookBeingRead
+        book.read = true
+
+        this.booksNotReaded = this.booksNotReaded.filter(book => book.read !== true )
+        
+        super.addBookReaded(book)
+        super.changeCurrent()        
+        super.changeNextToRead()
+        super.readedBooks()
+        super.notReadedBooks()
+        super.lastReaded()
+
+        book.readDate = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+    }       
+}
+
+let cleanCode = new Book('Clean Code', 'Code', 'Robert Martin', 'notReaded', false);
+let pragmaticProgrammer = new Book('The pragmatic programmer', 'code', 'David Thomas', 'notReaded', false)
+let drivenDesign = new Book('Domain-drive desing', 'software Design', 'Eric Evans', 'notReaded', false)
+let codigoLegado = new Book('Trabalho eficaz com código legado', 'codelgacy', 'Michael Feathers', 'notReaded', false)
+let kubernetes = new Book('Padrões para Kubernetes', 'cloud', 'Bilgin Ibryam', 'notReaded', false)
+let docker = new Book('Descomplicando Docker', 'docker', 'Jeferson Fernando', 'notReaded', false)
+let microsservicos = new Book('Microsserviços Prontos Para a Produção', 'microServices', 'Susan Fowler', 'notReaded', true)
+
+let codeList = new Booklist()
+
+codeList.add(cleanCode)
+codeList.add(pragmaticProgrammer)
+codeList.add(drivenDesign)
+codeList.add(codigoLegado)
+codeList.add(kubernetes)
+codeList.add(docker)
+codeList.add(microsservicos)
