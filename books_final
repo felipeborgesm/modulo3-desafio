@@ -10,7 +10,7 @@ class Book {
 }
 
 class BookFunctions{
-    constructor(books, booksReaded, numbooksReaded,booksNotReaded, numbooksNotReaded,nextBookToRead,currentBookBeingRead, lastBookRead){
+    constructor(){
         this.books = [];
         this.booksReaded = [];
         this.numbooksReaded = this.booksReaded.length;
