@@ -1,9 +1,8 @@
 class Book {
-    constructor(title, genre, author, status, read, readDate){
+    constructor(title, genre, author, read, readDate){
         this.title = title;
         this.genre = genre;
         this.author = author;
-        this.status = status;
         this.read = read; 
         this.readDate = new Date(readDate)
     }
@@ -60,13 +59,15 @@ class Booklist extends BookFunctions {
     }       
 }
 
-let cleanCode = new Book('Clean Code', 'Code', 'Robert Martin', 'notReaded', false);
-let pragmaticProgrammer = new Book('The pragmatic programmer', 'code', 'David Thomas', 'notReaded', false)
-let drivenDesign = new Book('Domain-drive desing', 'software Design', 'Eric Evans', 'notReaded', false)
-let codigoLegado = new Book('Trabalho eficaz com código legado', 'codelgacy', 'Michael Feathers', 'notReaded', false)
-let kubernetes = new Book('Padrões para Kubernetes', 'cloud', 'Bilgin Ibryam', 'notReaded', false)
-let docker = new Book('Descomplicando Docker', 'docker', 'Jeferson Fernando', 'notReaded', false)
-let microsservicos = new Book('Microsserviços Prontos Para a Produção', 'microServices', 'Susan Fowler', 'notReaded', true)
+let cleanCode = new Book('Clean Code', 'Code', 'Robert Martin', false);
+let pragmaticProgrammer = new Book('The pragmatic programmer', 'code', 'David Thomas', false)
+let drivenDesign = new Book('Domain-drive desing', 'software Design', 'Eric Evans', false)
+let codigoLegado = new Book('Trabalho eficaz com código legado', 'codelgacy', 'Michael Feathers', false)
+let kubernetes = new Book('Padrões para Kubernetes', 'cloud', 'Bilgin Ibryam', false)
+let docker = new Book('Descomplicando Docker', 'docker', 'Jeferson Fernando', false)
+let microsservicos = new Book('Microsserviços Prontos Para a Produção', 'microServices', 'Susan Fowler', true)
+let marketing4 = new Book('Marketing 5.0', 'Business', 'Philip Kotler', false)
+let dotcomsecrets = new Book('Dotcom secrets', 'Funnel science', 'Russel Brunson', true)
 
 let codeList = new Booklist
 
