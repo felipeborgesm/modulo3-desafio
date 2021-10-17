@@ -68,7 +68,7 @@ let kubernetes = new Book('Padrões para Kubernetes', 'cloud', 'Bilgin Ibryam', 
 let docker = new Book('Descomplicando Docker', 'docker', 'Jeferson Fernando', 'notReaded', false)
 let microsservicos = new Book('Microsserviços Prontos Para a Produção', 'microServices', 'Susan Fowler', 'notReaded', true)
 
-let codeList = new Booklist()
+let codeList = new Booklist
 
 codeList.add(cleanCode)
 codeList.add(pragmaticProgrammer)
