@@ -28,11 +28,11 @@ List.add(drivenDesign)
 List.add(codigoLegado)
 List.add(kubernetes)
 
-List.books // ver todos os livros
-List.booksReaded // ver todos os livros que já foram lidos
-List.booksNotReaded // ver todos os livros que não foram lidos
-List.numBooksReaded // número de livros lidos
-List.numBooksNotReaded // número de livros não lidos
-List.currentBookBeingRead // Livro sendo lido atualmente
-List.nextBookToRead // Próximo livro há ser lido
-List.lastBookRead  // último livro lido
+List.books // ver todos os livros  //
+List.booksReaded // ver todos os livros que já foram lidos  //
+List.booksNotReaded // ver todos os livros que não foram lidos  //
+List.numBooksReaded // número de livros lidos  // 
+List.numBooksNotReaded // número de livros não lidos  //
+List.currentBookBeingRead // Livro sendo lido atualmente  //
+List.nextBookToRead // Próximo livro há ser lido  //
+List.lastBookRead  // último livro  //
